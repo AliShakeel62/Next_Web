@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import {
   ShoppingCartOutlined,
@@ -28,12 +29,10 @@ const NavBar = () => {
       <nav
         style={{
           height: 50,
-          backgroundColor: "bisque",
-          alignContent: "center",
+          backgroundColor: "white",
           padding: "0 20px",
         }}
       >
-        
         <div
           className="center-content"
           style={{
@@ -42,43 +41,77 @@ const NavBar = () => {
             alignItems: "center",
           }}
         >
+          {/* Menu Icon for Drawer on Left */}
+          <div className="hamburger-menu">
+            <MenuOutlined onClick={showDrawer} />
+          </div>
 
-          <h1 style={{ fontSize: 30, fontWeight: "bolder" }}>Zay.co</h1>
-
-          <div className="hamburger-menu" style={{ display: "none" }}>
-          <MenuOutlined onClick={showDrawer} />
-        </div>
-
-        {/* Drawer for Mobile Menu */}
-        <Drawer title="Menu" placement="left" onClose={closeDrawer} open={drawerVisible}>
-          <p>Shop</p>
-          <p>On Sale</p>
-          <p>New Arrivals</p>
-          <p>Brand</p>
-        </Drawer>3xe3de3er554
-          {/* Full Menu for Larger Screens */}
-          <div
-            className="menu"
+          <h1
             style={{
-              backgroundColor: "blue",
-              width: 280,
-              justifyContent: "space-between",
-              alignItems: "center",
-              display: "flex",
+              marginLeft: 10,
+              fontSize: 25,
+              fontWeight: 900,
+              fontFamily: "raleway-v20-deprecated, sans-serif",
+              fontStyle: "normal",
             }}
+          >
+            Zay.co
+          </h1>
+
+          {/* Drawer for Mobile Menu */}
+          <Drawer
+            title="Menu"
+            placement="left"
+            onClose={closeDrawer}
+            open={drawerVisible}
           >
             <p>Shop</p>
             <p>On Sale</p>
             <p>New Arrivals</p>
             <p>Brand</p>
+          </Drawer>
+
+          {/* Full Menu for Larger Screens */}
+          <div
+            className="menu"
+            style={{
+              justifyContent: "space-between",
+              alignItems: "center",
+              display: "flex",
+              flexWrap: "wrap",
+              marginLeft: 9,
+              marginRight: 8,
+              width: "auto",
+              fontSize: 13,
+            }}
+          >
+            <p className="shop-item" style={{ marginRight: 7 }}>
+              Shop
+            </p>
+            <p className="onsale-item" style={{ marginRight: 7 }}>
+              On Sale
+            </p>
+            <p className="new-arrivals-item" style={{ marginRight: 7 }}>
+              New Arrivals
+            </p>
+            <p className="brand-item" style={{ marginRight: 7 }}>
+              Brand
+            </p>
           </div>
 
           {/* Search Bar */}
-          <div className="search-bar" style={{ width: 490, alignContent: "center" }}>
+          <div
+            className="search-bar"
+            style={{ width: 490, alignContent: "center" }}
+          >
             <Input
               placeholder="Search product here"
               prefix={<SearchOutlined />}
-              style={{ borderRadius: 50, width: "100%" }}
+              style={{
+                borderRadius: 50,
+                width: "100%",
+                backgroundColor: "whitesmoke",
+              }}
             />
           </div>
 
@@ -86,10 +119,10 @@ const NavBar = () => {
           <div
             style={{
               display: "flex",
-              backgroundColor: "brown",
               width: 90,
               justifyContent: "space-between",
               alignItems: "center",
+              marginLeft: 3,
             }}
           >
             <SearchOutlined onClick={toggleSearchInput} className="serchco" />
@@ -97,9 +130,6 @@ const NavBar = () => {
             <UserOutlined />
           </div>
         </div>
-
-        {/* Hamburger Menu Icon for Mobile */}
-      
 
         {/* Conditionally Render Search Input on Mobile */}
         {showSearchInput && (
@@ -112,16 +142,14 @@ const NavBar = () => {
         )}
 
         <style jsx>{`
-          /* On mobile, hide the full menu, search bar, and center content */
-          @media (max-width: 768px) {
+          @media (max-width: 641px) {
             .menu,
             .search-bar,
-            .center-content {
-              display: none;
-            }
-            .serchco {
-              display: block; /* Corrected this line */
-              width: 20px; /* Corrected this line */
+            .shop-item,
+            .new-arrivals-item,
+            .brand-item,
+            .onsale-item {
+              display: none; /* Hide all menu items */
             }
             .hamburger-menu {
               display: block;
@@ -135,12 +163,9 @@ const NavBar = () => {
           /* For screens wider than 768px, keep everything visible */
           @media (min-width: 769px) {
             .menu {
-              display: flex; /* Apply display:flex here for larger screens */
+              display: flex;
             }
             .hamburger-menu {
-              display: none;
-            }
-            .serchco {
               display: none;
             }
           }

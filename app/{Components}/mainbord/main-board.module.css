@@ -1,0 +1,43 @@
+/* Mainboard.module.css */
+
+.main {
+    height: 450px;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .title {
+    width: 40vw;
+    height: 100%;
+    background-color: whitesmoke;
+    font-size: clamp(20px, 5vw, 40px);
+    font-weight: 900;
+    font-family: raleway-v20-deprecated, sans-serif;
+    font-style: normal;
+    white-space: nowrap;
+  }
+  
+  .subtitle {
+    color: black;
+    width: 40vw;
+    margin-top: 1vh;
+    font-size: clamp(10px, 4vw, 3px);
+  }
+  
+  .button {
+    background-color: black;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+    padding: 2px 20px;
+  }
+  
+  @media (max-width: 440px) {
+    .main-div {
+      background-color: red;
+    }
+  }
+  
