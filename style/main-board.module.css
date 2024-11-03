@@ -1,12 +1,10 @@
-/* Mainboard.module.css */
-
 .main {
-    height: 450px;
-    width: 100%;
-    background-color: whitesmoke;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  height: "450px";
+  width: "100%";
+  background-color: "whitesmoke";
+  display: "flex";
+  align-items: "center";
+  justify-Content: "space-evenly";
   }
   
   .title {

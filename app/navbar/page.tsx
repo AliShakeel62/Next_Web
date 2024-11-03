@@ -64,6 +64,7 @@ const NavBar = () => {
             placement="left"
             onClose={closeDrawer}
             open={drawerVisible}
+            
           >
             <p>Shop</p>
             <p>On Sale</p>
@@ -82,7 +83,7 @@ const NavBar = () => {
               marginLeft: 9,
               marginRight: 8,
               width: "auto",
-              fontSize: 13,
+              fontSize: "clamp(13px, 2vw, 1px)",
             }}
           >
             <p className="shop-item" style={{ marginRight: 7 }}>

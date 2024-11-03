@@ -2,20 +2,12 @@
 
 import Image from "next/image";
 import img from "@/app/assits/file.png";
-import "@/app/{Components}/mainbord/main-board.module.css"; // Adjust the path if needed
-
+import style from "@/style/main-board.module.css"
 export default function Mainboard() {
   return (
     <div
-      className="main-div"
-      style={{
-        height: "450px",
-        width: "100%",
-        backgroundColor: "whitesmoke",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-evenly",
-      }}
+      className={`${style.main}`}
+      style={style.main}
     >
       <div style={{ marginLeft: 30, paddingTop: 30 }}>
         <h1
